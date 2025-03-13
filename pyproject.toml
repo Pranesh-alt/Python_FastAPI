@@ -3,14 +3,8 @@ name = "test"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-<<<<<<< HEAD
-requires-python = ">=3.11"
-dependencies = [
-    "fastapi[standard]>=0.115.8",
-    "sqlmodel>=0.0.22",
-=======
-requires-python = ">=3.12"
-dependencies = [
-    "fastapi[standard]>=0.115.8",
->>>>>>> 7dac4729ff3fc35a61d5c1155f2d86446da25114
-]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
