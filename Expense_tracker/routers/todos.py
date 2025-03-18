@@ -1,12 +1,19 @@
 from typing import Annotated
 from sqlalchemy.orm import Session
-from fastapi import APIRouter, Depends, status, Path, HTTPException
+from fastapi import APIRouter, Depends, status, Path, HTTPException, Request
 from pydantic import BaseModel, Field
 from ..models import Todos
 from ..database import  SessionLocal
 from .auth import get_current_user
+from starlette.responses import RedirectResponse
+from fastapi.templating import Jinja2Templates
 
-router = APIRouter()
+templates = Jinja2Templates(directory="Expense_tracker/templates")
+
+router = APIRouter(
+    prefix='/todos',
+    tags=['todos']
+)
 
 
 
